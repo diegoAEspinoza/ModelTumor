@@ -32,7 +32,7 @@ def model(populations, t, omega, Psi, P, A,K, psi, varPhi, zeta, show_continuos,
 
 def proyect (populations, t_total, omega, Psi, P, A, K, psi, varPhi, zeta, show_continuos):
     
-    t = np.linspace(0,t_total[0],100*t_total[0])
+    t = np.linspace(0,t_total[0],t_total[0])
     solution = odeint(model, populations, t, args=(omega, Psi, P, A, K, psi, varPhi, zeta, show_continuos, t_total[1], t_total[2]))
 
     G, C, N, Q = solution.T

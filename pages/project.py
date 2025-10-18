@@ -16,13 +16,13 @@ layout = html.Div(className="space-y-9", children=[
             className='flex gap-6', children=[
                 # Imagen 1
                 html.Img(
-                    className="w-[25rem]",
+                    className="w-[40rem]",
                     src='/assets/model.png', 
                     alt='Imagen de modelo', 
                 ),
                 # Imagen 2
                 html.Img(
-                    className="w-[25rem]",
+                    className="w-[40rem]",
                     src='/assets/model1.png', 
                     alt='Imagen de modelo', 
                 )

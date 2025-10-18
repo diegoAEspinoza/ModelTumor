@@ -1,4 +1,4 @@
-# main.py
+# app.py
 from dash import Dash, html, dcc
 import dash
 
@@ -13,6 +13,8 @@ app = Dash(
     suppress_callback_exceptions=True,
     external_scripts=external_scripts
 )
+
+server = app.server
 
 app.layout = html.Div(children=[
     html.Div(className='mx-auto max-w-7xl px-2 py-4 bg-blue-400', children=[

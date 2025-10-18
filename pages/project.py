@@ -37,99 +37,99 @@ layout = html.Div(className="space-y-9", children=[
                 html.Div(className='flex-1 space-y-1', children=[
                     html.Div([
                         html.H3(className="font-semibold", children='Glia'),
-                        dcc.Input(className="w-full text-sm px-2 py-1 border border-gray-400", type='number', value=495, id='G', debounce=True)
+                        dcc.Input(className="w-full text-sm px-2 py-1 border border-gray-400", type='number', value=495, id='G', debounce=True, step=5)
                     ]),
                     html.Div([
                         html.H3(className="font-semibold", children='Gliomas'),
-                        dcc.Input(className="w-full text-sm px-2 py-1 border border-gray-400", type='number', value=3, id='C', debounce=True)
+                        dcc.Input(className="w-full text-sm px-2 py-1 border border-gray-400", type='number', value=3, id='C', debounce=True, step=1)
                     ]),
                     html.Div([
                         html.H3(className="font-semibold", children='Neuronas'),
-                        dcc.Input(className="w-full text-sm px-2 py-1 border border-gray-400", type='number', value=495, id='N', debounce=True)
+                        dcc.Input(className="w-full text-sm px-2 py-1 border border-gray-400", type='number', value=495, id='N', debounce=True, step=5)
                     ]),
                     html.Div([
                         html.H3(className="font-semibold", children='Agente Quimioterapeutico'),
-                        dcc.Input(className="w-full text-sm px-2 py-1 border border-gray-400", type='number', value=0, id='Q', debounce=True)
+                        dcc.Input(className="w-full text-sm px-2 py-1 border border-gray-400", type='number', value=0, id='Q', debounce=True, step=5)
                     ]),
                     html.Div([
                         html.H3(className="font-semibold", children='Tiempo (dias)'),
-                        dcc.Input(className="w-full text-sm px-2 py-1 border border-gray-400", type='number', value=616, id='tiempo', debounce=True)
+                        dcc.Input(className="w-full text-sm px-2 py-1 border border-gray-400", type='number', value=616, id='tiempo', debounce=True, step=7)
                     ]),
                     html.Div(className='div_button my-4', children=[
                         html.Button('Change Mode', id='toggle-button', n_clicks=0, className='toggle-button bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg shadow-md transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50'),
                     ]),
                     html.Div([
                         html.H3(className="font-semibold", children='Dias Sin Medicamento'),
-                        dcc.Input(className="w-full text-sm px-2 py-1 border border-gray-400", type='number', value=25, id='dia_sin_medicamento', debounce=True, disabled = True)
+                        dcc.Input(className="w-full text-sm px-2 py-1 border border-gray-400", type='number', value=25, id='dia_sin_medicamento', debounce=True, disabled = True, step=1)
                     ]),
                     html.Div([
                         html.H3(className="font-semibold", children='Dias con Medicamento'),
-                        dcc.Input(className="w-full text-sm px-2 py-1 border border-gray-400", type='number', value= 3, id='dia_con_medicamento', debounce=True, disabled = True)
+                        dcc.Input(className="w-full text-sm px-2 py-1 border border-gray-400", type='number', value= 3, id='dia_con_medicamento', debounce=True, disabled = True, step=1)
                     ]),
                 ]),
                 # Parámetros adicionales
                 html.Div(className="flex-1", children=[
                     html.Div([
-                        html.H3(className="font-semibold", children='omega1'),
-                        dcc.Input(className="w-full text-sm px-2 py-1 border border-gray-400", type='number', value=6.8e-3, id='omega1', debounce=True)
+                        html.H3(className="font-semibold", children='Proliferación de células gliales'),
+                        dcc.Input(className="w-full text-sm px-2 py-1 border border-gray-400", type='number', value=6.8e-3, id='omega1', debounce=True, step=1.0e-4)
                     ]),
                     html.Div([
-                        html.H3(className="font-semibold", children='omega2'),
-                        dcc.Input(className="w-full text-sm px-2 py-1 border border-gray-400", type='number', value=1.2e-2, id='omega2', debounce=True)
+                        html.H3(className="font-semibold", children='Proliferación del glioma'),
+                        dcc.Input(className="w-full text-sm px-2 py-1 border border-gray-400", type='number', value=1.2e-2, id='omega2', debounce=True, step=1e-3)
                     ]),
                     html.Div([
-                        html.H3(className="font-semibold", children='Psi1'),
-                        dcc.Input(className="w-full text-sm px-2 py-1 border border-gray-400", type='number', value=3.5e-5, id='Psi1', debounce=True)
+                        html.H3(className="font-semibold", children='Interacción del glioma sobre las glías'),
+                        dcc.Input(className="w-full text-sm px-2 py-1 border border-gray-400", type='number', value=3.5e-5, id='Psi1', debounce=True, step=1e-6)
                     ]),
                     html.Div([
-                        html.H3(className="font-semibold", children='Psi2'),
-                        dcc.Input(className="w-full text-sm px-2 py-1 border border-gray-400", type='number', value=3.5e-6, id='Psi2', debounce=True)
+                        html.H3(className="font-semibold", children='Interacción de las glías sobre el glioma'),
+                        dcc.Input(className="w-full text-sm px-2 py-1 border border-gray-400", type='number', value=3.5e-6, id='Psi2', debounce=True, step=1e-7)
                     ]),
                     html.Div([
-                        html.H3(className="font-semibold", children='P1'),
-                        dcc.Input(className="w-full text-sm px-2 py-1 border border-gray-400", type='number', value=2.4e-5, id='P1', debounce=True)
+                        html.H3(className="font-semibold", children='Efecto del agente químico sobre las glías'),
+                        dcc.Input(className="w-full text-sm px-2 py-1 border border-gray-400", type='number', value=2.4e-5, id='P1', debounce=True, step=1e-6)
                     ]),
                     html.Div([
-                        html.H3(className="font-semibold", children='P2'),
-                        dcc.Input(className="w-full text-sm px-2 py-1 border border-gray-400", type='number', value=2.4e-2, id='P2', debounce=True)
+                        html.H3(className="font-semibold", children='Efecto del agente químico sobre el glioma'),
+                        dcc.Input(className="w-full text-sm px-2 py-1 border border-gray-400", type='number', value=2.4e-2, id='P2', debounce=True, step=1.e-3)
                     ]),
                     html.Div([
-                        html.H3(className="font-semibold", children='P3'),
-                        dcc.Input(className="w-full text-sm px-2 py-1 border border-gray-400", type='number', value=2.4e-5, id='P3', debounce=True)
+                        html.H3(className="font-semibold", children='Efecto del agente químico sobre las neuronas'),
+                        dcc.Input(className="w-full text-sm px-2 py-1 border border-gray-400", type='number', value=2.4e-5, id='P3', debounce=True, step=1e-6)
                     ]),
                 ]),
                 html.Div(className="flex-1", children=[
                     html.Div([
-                        html.H3(className="font-semibold", children='A1'),
-                        dcc.Input(className="w-full text-sm px-2 py-1 border border-gray-400", type='number', value=500, id='A1', debounce=True)
+                        html.H3(className="font-semibold", children='Saturación sobre las glías'),
+                        dcc.Input(className="w-full text-sm px-2 py-1 border border-gray-400", type='number', value=500, id='A1', debounce=True, step=20)
                     ]),
                     html.Div([
-                        html.H3(className="font-semibold", children='A2'),
-                        dcc.Input(className="w-full text-sm px-2 py-1 border border-gray-400", type='number', value=500, id='A2', debounce=True)
+                        html.H3(className="font-semibold", children='Saturación sobre el glioma'),
+                        dcc.Input(className="w-full text-sm px-2 py-1 border border-gray-400", type='number', value=500, id='A2', debounce=True, step=20)
                     ]),
                     html.Div([
-                        html.H3(className="font-semibold", children='A3'),
-                        dcc.Input(className="w-full text-sm px-2 py-1 border border-gray-400", type='number', value=500, id='A3', debounce=True)
+                        html.H3(className="font-semibold", children='Saturación sobre las neuronas'),
+                        dcc.Input(className="w-full text-sm px-2 py-1 border border-gray-400", type='number', value=500, id='A3', debounce=True, step=20)
                     ]),
                     html.Div([
-                        html.H3(className="font-semibold", children='K1'),
-                        dcc.Input(className="w-full text-sm px-2 py-1 border border-gray-400", type='number', value=500, id='K1', debounce=True)
+                        html.H3(className="font-semibold", children='Capacidad de carga de las glías'),
+                        dcc.Input(className="w-full text-sm px-2 py-1 border border-gray-400", type='number', value=500, id='K1', debounce=True, step=20)
                     ]),
                     html.Div([
-                        html.H3(className="font-semibold", children='K2'),
-                        dcc.Input(className="w-full text-sm px-2 py-1 border border-gray-400", type='number', value=510, id='K2', debounce=True)
+                        html.H3(className="font-semibold", children='Capacidad de carga del glioma'),
+                        dcc.Input(className="w-full text-sm px-2 py-1 border border-gray-400", type='number', value=510, id='K2', debounce=True, step=10)
                     ]),
                     html.Div([
-                        html.H3(className="font-semibold", children='psi'),
-                        dcc.Input(className="w-full text-sm px-2 py-1 border border-gray-400", type='number', value=2e-2, id='psi', debounce=True)
+                        html.H3(className="font-semibold", children='Influencia de la pérdida glial en la muerte neuronal'),
+                        dcc.Input(className="w-full text-sm px-2 py-1 border border-gray-400", type='number', value=2e-2, id='psi', debounce=True, step=0.5e-2)
                     ]),
                     html.Div([
-                        html.H3(className="font-semibold", children='varPhi'),
-                        dcc.Input(className="w-full text-sm px-2 py-1 border border-gray-400", type='number', value=0, id='varPhi', debounce=True)
+                        html.H3(className="font-semibold", children='Tasa de infusión del agente químico'),
+                        dcc.Input(className="w-full text-sm px-2 py-1 border border-gray-400", type='number', value=0, id='varPhi', debounce=True, step=1)
                     ]),
                     html.Div([
-                        html.H3(className="font-semibold", children='zeta'),
-                        dcc.Input(className="w-full text-sm px-2 py-1 border border-gray-400", type='number', value=0.2, id='zeta', debounce=True)
+                        html.H3(className="font-semibold", children='Tasa de eliminación del agente químico'),
+                        dcc.Input(className="w-full text-sm px-2 py-1 border border-gray-400", type='number', value=0.2, id='zeta', debounce=True, step=0.1)
                     ]),
                 ]),
             ]),
